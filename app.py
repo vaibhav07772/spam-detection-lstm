@@ -18,7 +18,7 @@ st.set_page_config(
 # -------------------------------
 @st.cache_resource
 def load_artifacts():
-    model = load_model("spam_lstm_model.h5")
+    model = load_model("spam_lstm_model.keras", compile=False")
     tokenizer = joblib.load("spam_tokenizer.pkl")
     return model, tokenizer
 
@@ -91,4 +91,5 @@ st.markdown("""
 ---
 👨‍💻 **Built by Vaibhav Singh**  
 🎓 BSc Data Science | Aspiring ML & NLP Engineer
+
 """)
